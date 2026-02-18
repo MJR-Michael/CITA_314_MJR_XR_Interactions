@@ -24,15 +24,15 @@ public class DrawerInteractable : MonoBehaviour
         
     }
 
-    private void OnDrawerUnlocked(SelectEnterEventArgs arg0)
-    {
-        isLocked = false;
-        Debug.Log("**** DRAWER UNLOCKED! ****");
-    }
-
     private void OnDrawerLocked(SelectExitEventArgs arg0)
     {
         isLocked = true;
         Debug.Log("**** DRAWER LOCKED! ****");
+    }
+
+    private void OnDrawerUnlocked(SelectEnterEventArgs arg0)
+    {
+        isLocked = false;
+        Debug.Log("**** DRAWER UNLOCKED! ****");
     }
 }

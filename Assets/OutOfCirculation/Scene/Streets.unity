@@ -10480,7 +10480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 10383949}
   m_Colliders: []
   m_InteractionLayers:
     m_Bits: 4294967295
@@ -20937,7 +20937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 10383949}
   m_Colliders: []
   m_InteractionLayers:
     m_Bits: 4294967295
@@ -21747,7 +21747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 10383949}
   m_Colliders: []
   m_InteractionLayers:
     m_Bits: 4294967295
@@ -22299,7 +22299,7 @@ GameObject:
   - component: {fileID: 1696496775}
   - component: {fileID: 1696496774}
   m_Layer: 0
-  m_Name: Right Direct Interactor (1)
+  m_Name: Right Direct Interactor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22398,7 +22398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4253f32900bcc4d499d675566142ded0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 10383949}
   m_InteractionLayers:
     m_Bits: 2
   m_Handedness: 2
@@ -28956,7 +28956,6 @@ Transform:
   m_Children:
   - {fileID: 6253549085756934534}
   - {fileID: 3693593038100719794}
-  - {fileID: 5667785022761772980}
   - {fileID: 6173243040218560252}
   m_Father: {fileID: 543450652229593562}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -29252,7 +29251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_GroupName: Right
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 10383949}
   m_StartingGroupMembers:
   - {fileID: 6034187862505560368}
   - {fileID: 6063958747509324737}
@@ -31863,7 +31862,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4253f32900bcc4d499d675566142ded0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 10383949}
   m_InteractionLayers:
     m_Bits: 2
   m_Handedness: 1
@@ -33201,7 +33200,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.226, z: 0.39299998}
   m_LocalScale: {x: 0.075, y: 0.075, z: 0.075}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5667785022761772980}
   m_Father: {fileID: 1084223838737932143}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!23 &3705523914950685772
@@ -34930,7 +34930,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_GroupName: Left
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 10383949}
   m_StartingGroupMembers:
   - {fileID: 8233382249808231721}
   - {fileID: 3834537883507189086}
@@ -37394,7 +37394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 10383949}
   m_Colliders: []
   m_InteractionLayers:
     m_Bits: 4294967295
@@ -37633,9 +37633,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8644500202546326342}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: -1}
-  m_LocalPosition: {x: 0, y: 0.22599995, z: 0.3930002}
-  m_LocalScale: {x: 0.075, y: 0.075, z: 0.075}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 280973859894052969}
@@ -37644,7 +37644,7 @@ Transform:
   - {fileID: 2573254757868513920}
   - {fileID: 2832575498672322708}
   - {fileID: 8789959191325951286}
-  m_Father: {fileID: 1084223838737932143}
+  m_Father: {fileID: 3693593038100719794}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &5675551260020137684
 Transform:
@@ -40555,7 +40555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6803edce0201f574f923fd9d10e5b30a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRRayInteractor
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 10383949}
   m_InteractionLayers:
     m_Bits: 2147483701
   m_Handedness: 2
@@ -40903,7 +40903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 10383949}
   m_Colliders: []
   m_InteractionLayers:
     m_Bits: 4294967295
@@ -43308,7 +43308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &8658849364281510714
 GameObject:
   m_ObjectHideFlags: 0
@@ -43538,7 +43538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6803edce0201f574f923fd9d10e5b30a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRRayInteractor
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 10383949}
   m_InteractionLayers:
     m_Bits: 2147483701
   m_Handedness: 1
