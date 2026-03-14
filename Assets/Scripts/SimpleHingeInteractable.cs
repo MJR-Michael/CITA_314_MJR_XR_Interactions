@@ -1,4 +1,3 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,25 +5,36 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class SimpleHingeInteractable : XRSimpleInteractable
-{
+{   
     private Transform grabHand;
+    [SerializeField] bool isLocked;
     void Start()
     {
-        
-    }
 
+    }
+    public void LockHinge()
+    {
+        isLocked = true;
+    }
+    public void UnlockHinge()
+    {
+        isLocked = false;
+    }
     // Update is called once per frame
     protected virtual void Update()
     {
-        if(grabHand != null)
+        if (grabHand != null)
         {
-            transform.LookAt(grabHand, transform.forward); 
+            transform.LookAt(grabHand, transform.forward);
         }
     }
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
-        base.OnSelectEntered(args);
-        grabHand = args.interactorObject.transform;
+        if (!isLocked)
+        {
+            base.OnSelectEntered(args);
+            grabHand = args.interactorObject.transform;
+        }
     }
     protected override void OnSelectExited(SelectExitEventArgs args)
     {
