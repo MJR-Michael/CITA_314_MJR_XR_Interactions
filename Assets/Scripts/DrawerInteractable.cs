@@ -7,7 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 public class DrawerInteractable : MonoBehaviour
 {
 [SerializeField] XRSocketInteractor keySocket;
-[SerializeField] bool isLocked;
+[SerializeField] bool isLocked = true;
 
     void Start()
     {
