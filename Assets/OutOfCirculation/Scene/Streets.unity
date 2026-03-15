@@ -15299,6 +15299,7 @@ MonoBehaviour:
   m_StartingInteractionStrengthFilters: []
   m_AutoFindParentInteractableInHierarchy: 0
   m_ParentInteractableObject: {fileID: 0}
+  positionLimits: {x: 0, y: 0, z: 0}
   isLocked: 0
 --- !u!23 &1210941300
 MeshRenderer:
@@ -40875,9 +40876,11 @@ MonoBehaviour:
   m_StartingInteractionStrengthFilters: []
   m_AutoFindParentInteractableInHierarchy: 0
   m_ParentInteractableObject: {fileID: 0}
+  positionLimits: {x: 0.15, y: 0.15, z: 0.15}
   isLocked: 1
   comboLock: {fileID: 0}
   doorObject: {fileID: 4293244892623500541}
+  rotationLimits: {x: 15, y: 0, z: 0}
 --- !u!54 &7232470888996212017
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -40925,7 +40928,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 1
-  m_Center: {x: 15, y: 0, z: 6.5}
+  m_Center: {x: 0, y: 0, z: 6.5}
 --- !u!114 &7255200166939207155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44038,9 +44041,11 @@ MonoBehaviour:
   m_StartingInteractionStrengthFilters: []
   m_AutoFindParentInteractableInHierarchy: 0
   m_ParentInteractableObject: {fileID: 0}
+  positionLimits: {x: 0.15, y: 0.15, z: 0.15}
   isLocked: 0
   comboLock: {fileID: 0}
   doorObject: {fileID: 6097707997701505328}
+  rotationLimits: {x: 15, y: 0, z: 0}
 --- !u!54 &8471264458311598059
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -44088,7 +44093,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 1
-  m_Center: {x: 15, y: 0, z: 6.5}
+  m_Center: {x: 0, y: 0, z: 6.5}
 --- !u!1 &8474882354055135944
 GameObject:
   m_ObjectHideFlags: 0
