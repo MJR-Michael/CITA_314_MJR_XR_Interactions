@@ -25,6 +25,12 @@ public class XrAudioManager : MonoBehaviour
     [SerializeField] AudioClip drawerMoveClip;
     [SerializeField] AudioClip drawerSocketClip;
 
+    [Header("Hinge Interactables")]
+    [SerializeField] SimpleHingeInteractable[] cabinetDoors =
+        new SimpleHingeInteractable[2];
+    [SerializeField] AudioSource[] cabinetDoorSound;
+    [SerializeField] AudioClip cabinetDoorMoveClip;
+
     [Header("The Wall")]
     [SerializeField] TheWall wall;
     [SerializeField] XRSocketInteractor wallSocket;
@@ -45,6 +51,14 @@ public class XrAudioManager : MonoBehaviour
         if (drawer != null)
         {
             SetDrawerInteractable();
+        }
+        cabinetDoorSound = new AudioSource[cabinetDoors.Length];
+        for (int i = 0; i < cabinetDoors.Length; i++)
+        {
+            if(cabinetDoors[i] != null)
+            {
+                SetCabinetDoors(i);
+            }
         }
         if (wall != null)
         {
@@ -71,7 +85,7 @@ public class XrAudioManager : MonoBehaviour
         drawer.selectEntered.AddListener(OnDrawerMove);
         drawer.selectExited.AddListener(OnDrawerStop);
         drawerSocket = drawer.GetKeySocket;
-        if(drawerSocket != null)
+        if (drawerSocket != null)
         {
             drawerSocketSound = drawerSocket.transform.AddComponent<AudioSource>();
             drawerSocketClip = drawer.GetSocketedClip;
@@ -84,13 +98,46 @@ public class XrAudioManager : MonoBehaviour
     {
         drawerSocketSound.Play();
     }
+    private void SetCabinetDoors(int index)
+    {
+        cabinetDoorSound[index] = cabinetDoors[index].transform
+        .AddComponent<AudioSource>();
+        cabinetDoorMoveClip = cabinetDoors[index].GetHingeMoveClip;
+        CheckClip(ref cabinetDoorMoveClip);
+        cabinetDoorSound[index].clip = cabinetDoorMoveClip;
+        cabinetDoors[index].OnHingeSelected.AddListener(OnDoorMove);
+        cabinetDoors[index].selectExited.AddListener(OnDoorStop);
+    }
+
+    private void OnDoorStop(SelectExitEventArgs arg0)
+    {
+        for (int i = 0; i < cabinetDoors.Length; i++)
+        {
+            if(arg0.interactableObject == cabinetDoors[i])
+            {
+                cabinetDoorSound[i].Stop();
+            }
+        }
+    }
+
+    private void OnDoorMove(SimpleHingeInteractable arg0)
+    {
+        for (int i = 0; i < cabinetDoors.Length; i++)
+        {
+            if(arg0 == cabinetDoors[i])
+            {
+                cabinetDoorSound[i].Play();
+            }
+        }
+    }
+
     private void SetWall()
     {
         destroyWallClip = wall.GetDestroyClip;
         CheckClip(ref destroyWallClip);
         wall.OnDestroy.AddListener(OnDestroyWall);
         wallSocket = wall.GetWallSocket;
-        if(wallSocket != null)
+        if (wallSocket != null)
         {
             wallSocketSound = wallSocket.transform.AddComponent<AudioSource>();
             wallSocketClip = wall.GetSocketClip;
@@ -106,7 +153,7 @@ public class XrAudioManager : MonoBehaviour
     }
 
     private void CheckClip(ref AudioClip clip)
-    {       
+    {
         if (clip == null)
         {
             clip = fallBackClip;
