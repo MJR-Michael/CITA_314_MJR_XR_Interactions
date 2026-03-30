@@ -19,6 +19,8 @@ public class DrawerInteractable : XRGrabInteractable
     private Vector3 limitPositions;
     [SerializeField] float drawerLimitZ = 0.8f;
     [SerializeField] private Vector3 limitDistances = new Vector3(.02f,.02f,0);
+    [SerializeField] AudioClip drawerMoveClip;
+    public AudioClip GetDrawerMoveClip => drawerMoveClip;
     void Start()
     {   
         if(keySocket != null)
