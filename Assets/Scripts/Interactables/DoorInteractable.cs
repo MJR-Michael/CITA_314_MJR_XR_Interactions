@@ -81,7 +81,7 @@ public class DoorInteractable : SimpleHingeInteractable
         else if(isOpen)
         {
             transform.localEulerAngles = endRotation;
-            OnOpen.Invoke();
+            OnOpen?.Invoke();
         }
         else
         {
