@@ -8,6 +8,12 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 public class XrAudioManager : MonoBehaviour
 {
+    [Header("Progress Control")]
+    [SerializeField] ProgressControl progressControl;
+    [SerializeField] AudioSource progressSound;
+    [SerializeField] AudioClip startGameClip;
+    [SerializeField] AudioClip challengeCompleteClip;
+
     [Header("Grab Interactables")]
     [SerializeField] XRGrabInteractable[] grabInteractables;
     [SerializeField] AudioSource grabSound;
@@ -48,11 +54,19 @@ public class XrAudioManager : MonoBehaviour
     AudioClip wallSocketClip;
 
     [Header("Local Audio Settings")]
+    [SerializeField] private AudioSource backgroundMusic;
+    [SerializeField] private AudioClip backgroundMusicClip;
     [SerializeField] private AudioClip fallBackClip;
     private const string FallBackClip_Name = "fallBackClip";
+    private bool startAudioBool;
 
     private void OnEnable()
     {
+        if (progressControl != null)
+        {
+            progressControl.OnStartGame.AddListener(StartGame);
+            progressControl.OnChallengeComplete.AddListener(ChallengeComplete);
+        }
         if (fallBackClip == null)
         {
             fallBackClip = AudioClip.Create(FallBackClip_Name, 1, 1, 1000, true);
@@ -79,6 +93,37 @@ public class XrAudioManager : MonoBehaviour
             SetWall();
         }
     }
+
+    private void ChallengeComplete(string arg0)
+    {
+        if (progressSound != null && challengeCompleteClip != null)
+        {
+            progressSound.clip = challengeCompleteClip;
+            progressSound.Play();
+        }
+    }
+
+    private void StartGame(string arg0)
+    {
+        if (!startAudioBool)
+        {
+            startAudioBool = true;
+            if (backgroundMusic != null && backgroundMusicClip != null)
+            {
+                backgroundMusic.clip = backgroundMusicClip;
+                backgroundMusic.Play();
+            }
+        }
+        else
+        {
+            if (progressSound != null && startGameClip != null)
+            {
+                progressSound.clip = startGameClip;
+                progressSound.Play();
+            }
+        }
+    }
+
     private void SetGrabbables()
     {
         grabInteractables = FindObjectsByType<XRGrabInteractable>(FindObjectsSortMode.None);
