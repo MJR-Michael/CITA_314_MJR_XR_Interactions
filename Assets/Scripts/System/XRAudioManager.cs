@@ -19,33 +19,35 @@ public class XrAudioManager : MonoBehaviour
 
     [Header("Drawer Interactable")]
     [SerializeField] DrawerInteractable drawer;
-    [SerializeField] XRSocketInteractor drawerSocket;
-    [SerializeField] AudioSource drawerSound;
-    [SerializeField] AudioSource drawerSocketSound;
-    [SerializeField] AudioClip drawerMoveClip;
-    [SerializeField] AudioClip drawerSocketClip;
+    XRSocketInteractor drawerSocket;
+    AudioSource drawerSound;
+    AudioSource drawerSocketSound;
+    AudioClip drawerMoveClip;
+    AudioClip drawerSocketClip;
 
     [Header("Hinge Interactables")]
     [SerializeField]
     SimpleHingeInteractable[] cabinetDoors =
         new SimpleHingeInteractable[2];
-    [SerializeField] AudioSource[] cabinetDoorSound;
-    [SerializeField] AudioClip cabinetDoorMoveClip;
+    AudioSource[] cabinetDoorSound;
+    AudioClip cabinetDoorMoveClip;
 
     [Header("Combo Lock")]
     [SerializeField] CombinationLock comboLock;
-    [SerializeField] AudioSource comboLockSound;
-    [SerializeField] AudioClip lockComboClip;
-    [SerializeField] AudioClip unlockComboClip;
-    [SerializeField] AudioClip comboButtonPressedClip;
+    AudioSource comboLockSound;
+    AudioClip lockComboClip;
+    AudioClip unlockComboClip;
+    AudioClip comboButtonPressedClip;
 
     [Header("The Wall")]
     [SerializeField] TheWall wall;
-    [SerializeField] XRSocketInteractor wallSocket;
+    XRSocketInteractor wallSocket;
     [SerializeField] AudioSource wallSound;
-    [SerializeField] AudioSource wallSocketSound;
-    [SerializeField] AudioClip destroyWallClip;
-    [SerializeField] AudioClip wallSocketClip;
+    AudioSource wallSocketSound;
+    AudioClip destroyWallClip;
+    AudioClip wallSocketClip;
+
+    [Header("Local Audio Settings")]
     [SerializeField] private AudioClip fallBackClip;
     private const string FallBackClip_Name = "fallBackClip";
 
