@@ -1,5 +1,7 @@
 using UnityEngine.XR.Interaction.Toolkit.Inputs.Readers;
 
+//this lecture wqas technically already completed
+
 namespace UnityEngine.XR.Interaction.Toolkit.Samples.Hands
 {
     /// <summary>
