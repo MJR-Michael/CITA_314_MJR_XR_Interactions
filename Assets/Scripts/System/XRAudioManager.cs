@@ -307,6 +307,8 @@ public class XrAudioManager : MonoBehaviour
     {
         for (int i = 0; i < cabinetDoors.Length; i++)
         {
+
+            //dont think it needs fixing?
             if (arg0.interactableObject == cabinetDoors[i])
             {
                 cabinetDoorSound[i].Stop();
