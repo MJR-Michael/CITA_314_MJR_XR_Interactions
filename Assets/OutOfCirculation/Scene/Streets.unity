@@ -11926,8 +11926,12 @@ MonoBehaviour:
   m_StartingInteractionStrengthFilters: []
   m_AutoFindParentInteractableInHierarchy: 0
   m_ParentInteractableObject: {fileID: 0}
+  OnHingeSelected:
+    m_PersistentCalls:
+      m_Calls: []
   positionLimits: {x: 0.15, y: 0.03, z: 0.15}
   isLocked: 0
+  hingeMoveClip: {fileID: 0}
   OnOpen:
     m_PersistentCalls:
       m_Calls:
@@ -30844,9 +30848,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08c102cda67ade143ad4de9937dc8694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::XrAudioManager
+  progressControl: {fileID: 0}
+  progressSound: {fileID: 0}
+  startGameClip: {fileID: 0}
+  challengeCompleteClip: {fileID: 0}
+  grabInteractables: []
+  grabSound: {fileID: 0}
+  grabClip: {fileID: 0}
+  keyClip: {fileID: 0}
+  activatedSound: {fileID: 0}
+  grabActivatedClip: {fileID: 0}
+  wandActivatedClip: {fileID: 0}
+  drawer: {fileID: 0}
+  cabinetDoors:
+  - {fileID: 0}
+  - {fileID: 0}
+  comboLock: {fileID: 0}
   wall: {fileID: 1671985063}
-  wallSource: {fileID: 898354461}
-  destroyWallClip: {fileID: 0}
+  wallSound: {fileID: 0}
+  joystick: {fileID: 0}
+  robot: {fileID: 0}
+  backgroundMusic: {fileID: 0}
+  backgroundMusicClip: {fileID: 0}
   fallBackClip: {fileID: 0}
 --- !u!1 &1280393985
 GameObject:
@@ -40951,6 +40974,7 @@ MonoBehaviour:
   destroyWall: 0
   maxPower: 4000
   destroyWallClip: {fileID: 8300000, guid: 966117de60fa8db4a9fc27cd9f180bba, type: 3}
+  socketClip: {fileID: 0}
 --- !u!1001 &1674953963
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44745,13 +44769,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 811207cc04fd19b7095500059155d204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleUIControl
-  startButton: {fileID: 523098811}
-  msgStrings:
-  - 'Press start button to enable key indicator '
-  - FInd key and unlock desser
+  progressControl: {fileID: 0}
   msgTexts:
   - {fileID: 166075244}
-  keyIndicatorLight: {fileID: 1101184053}
 --- !u!1001 &1829018009
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65112,8 +65132,12 @@ MonoBehaviour:
   m_StartingInteractionStrengthFilters: []
   m_AutoFindParentInteractableInHierarchy: 0
   m_ParentInteractableObject: {fileID: 0}
+  OnHingeSelected:
+    m_PersistentCalls:
+      m_Calls: []
   positionLimits: {x: 0.15, y: 0.03, z: 0.15}
   isLocked: 0
+  hingeMoveClip: {fileID: 0}
   OnOpen:
     m_PersistentCalls:
       m_Calls: []
@@ -66418,12 +66442,20 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
+  OnDrawerDetach:
+    m_PersistentCalls:
+      m_Calls: []
   drawerTransform: {fileID: 0}
   keySocket: {fileID: 9123782381935708059}
+  physicsButton: {fileID: 0}
   keyIndicatorLight: {fileID: 1101184053}
   isLocked: 1
+  isDetachable: 0
+  isDetached: 0
   drawerLimitZ: 0.8
   limitDistances: {x: 0.02, y: 0.02, z: 0}
+  drawerMoveClip: {fileID: 0}
+  socketedClip: {fileID: 0}
 --- !u!4 &7571989808422061354
 Transform:
   m_ObjectHideFlags: 0
@@ -68409,8 +68441,12 @@ MonoBehaviour:
   m_StartingInteractionStrengthFilters: []
   m_AutoFindParentInteractableInHierarchy: 0
   m_ParentInteractableObject: {fileID: 0}
+  OnHingeSelected:
+    m_PersistentCalls:
+      m_Calls: []
   positionLimits: {x: 0.15, y: 0.03, z: 0.15}
   isLocked: 0
+  hingeMoveClip: {fileID: 0}
   OnOpen:
     m_PersistentCalls:
       m_Calls: []
