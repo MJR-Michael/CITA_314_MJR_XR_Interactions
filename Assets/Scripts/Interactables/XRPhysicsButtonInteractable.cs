@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.Events;
-using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
-public class XrPhysicsButtonInteractable : XRSimpleInteractable
+public class XrPhysicsButtonInteractable : UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable
 {
     public UnityEvent OnBaseEnter;
     public UnityEvent OnBaseExit;

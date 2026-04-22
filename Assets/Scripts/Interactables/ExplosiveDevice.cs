@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.Events;
-using UnityEngine.XR.Interaction.Toolkit.Interactables;
-using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
-public class ExplosiveDevice : XRGrabInteractable
+public class ExplosiveDevice : UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable
 {
     public UnityEvent OnDetonated;
     private bool isActivated;
@@ -15,7 +13,7 @@ public class ExplosiveDevice : XRGrabInteractable
     {
         base.OnSelectEntered(args);
         if(args.interactorObject.transform
-        .GetComponent<XRSocketInteractor>() != null)
+        .GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor>() != null)
         {
             isActivated = true;
         }

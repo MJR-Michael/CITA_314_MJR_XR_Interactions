@@ -1,12 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
-using UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement;
+
 
 public class XrPlayerControl : MonoBehaviour
 {
-    [SerializeField] GrabMoveProvider[] grabMovers;
+    [SerializeField] UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement.GrabMoveProvider[] grabMovers;
     [SerializeField] Collider[] grabColliders;
 
     private void OnTriggerEnter(Collider other)

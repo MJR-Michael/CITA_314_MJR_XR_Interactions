@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.UI;
-using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
-public class XrButtonInteractable : XRSimpleInteractable
+public class XrButtonInteractable : UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable
 {
     [SerializeField] Image buttonImage;
     [SerializeField] private Color normalColor;

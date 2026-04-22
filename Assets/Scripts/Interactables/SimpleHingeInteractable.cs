@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.Events;
-using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 [RequireComponent(typeof(Collider))]
 [RequireComponent(typeof(Rigidbody))]
-public abstract class SimpleHingeInteractable : XRSimpleInteractable
+public abstract class SimpleHingeInteractable : UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable
 {
     public UnityEvent<SimpleHingeInteractable> OnHingeSelected;
     [SerializeField] Vector3 positionLimits;

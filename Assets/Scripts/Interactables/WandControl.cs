@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
-using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
-public class WandControl : XRGrabInteractable
+public class WandControl : UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable
 {
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] Transform projectileSpawnPoint;

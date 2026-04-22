@@ -4,14 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.Events;
-using UnityEngine.XR.Interaction.Toolkit.Interactables;
-using UnityEngine.XR.Interaction.Toolkit.Interactors;
-public class DrawerInteractable : XRGrabInteractable
+public class DrawerInteractable : UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable
 {
     public UnityEvent OnDrawerDetach;
     [SerializeField] Transform drawerTransform;
-    [SerializeField] XRSocketInteractor keySocket;
-    public XRSocketInteractor GetKeySocket => keySocket;
+    [SerializeField] UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor keySocket;
+    public UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor GetKeySocket => keySocket;
     [SerializeField] XrPhysicsButtonInteractable physicsButton;
     public XrPhysicsButtonInteractable GetPhysicsButton => physicsButton;
     [SerializeField] GameObject keyIndicatorLight;

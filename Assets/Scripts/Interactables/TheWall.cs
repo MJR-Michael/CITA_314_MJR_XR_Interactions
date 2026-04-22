@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.Events;
-using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 [ExecuteAlways]
 public class TheWall : MonoBehaviour
@@ -13,8 +12,8 @@ public class TheWall : MonoBehaviour
     [SerializeField] GameObject wallCubePrefab;
     [SerializeField] GameObject socketWallPrefab;
     [SerializeField] int socketPosition = 1;
-    [SerializeField] XRSocketInteractor wallSocket;
-    public XRSocketInteractor GetWallSocket => wallSocket;
+    [SerializeField] UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor wallSocket;
+    public UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor GetWallSocket => wallSocket;
     [SerializeField] ExplosiveDevice explosiveDevice;
     [SerializeField] List<GeneratedColumn> generatedColumn;
     GameObject[] wallCubes;
@@ -111,7 +110,7 @@ public class TheWall : MonoBehaviour
             {
                 wallCubes[socketPosition].transform.SetParent(wallCubes[0].transform);
             }
-            wallSocket = wallCubes[socketPosition].GetComponentInChildren<XRSocketInteractor>();
+            wallSocket = wallCubes[socketPosition].GetComponentInChildren<UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor>();
             if (wallSocket != null)
             {
                 wallSocket.selectEntered.AddListener(OnSocketEnter);

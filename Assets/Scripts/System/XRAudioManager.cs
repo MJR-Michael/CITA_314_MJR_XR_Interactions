@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
-using UnityEngine.XR.Interaction.Toolkit.Interactables;
-using UnityEngine.XR.Interaction.Toolkit.Interactors;
 public class XrAudioManager : MonoBehaviour
 {
     [Header("Progress Control")]
@@ -15,7 +13,7 @@ public class XrAudioManager : MonoBehaviour
     [SerializeField] AudioClip challengeCompleteClip;
 
     [Header("Grab Interactables")]
-    [SerializeField] XRGrabInteractable[] grabInteractables;
+    [SerializeField] UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable[] grabInteractables;
     [SerializeField] AudioSource grabSound;
     [SerializeField] AudioClip grabClip;
     [SerializeField] AudioClip keyClip;
@@ -25,7 +23,7 @@ public class XrAudioManager : MonoBehaviour
 
     [Header("Drawer Interactable")]
     [SerializeField] DrawerInteractable drawer;
-    XRSocketInteractor drawerSocket;
+    UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor drawerSocket;
     XrPhysicsButtonInteractable drawerPhysicsButton;
     private bool isDetached;
     AudioSource drawerSound;
@@ -49,7 +47,7 @@ public class XrAudioManager : MonoBehaviour
 
     [Header("The Wall")]
     [SerializeField] TheWall wall;
-    XRSocketInteractor wallSocket;
+    UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor wallSocket;
     [SerializeField] AudioSource wallSound;
     AudioSource wallSocketSound;
     AudioClip destroyWallClip;
@@ -224,7 +222,7 @@ public class XrAudioManager : MonoBehaviour
 
     private void SetGrabbables()
     {
-        grabInteractables = FindObjectsByType<XRGrabInteractable>(FindObjectsSortMode.None);
+        grabInteractables = FindObjectsByType<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>(FindObjectsSortMode.None);
         for (int i = 0; i < grabInteractables.Length; i++)
         {
             grabInteractables[i].selectEntered.AddListener(OnSelectEnterGrabbable);
@@ -307,8 +305,6 @@ public class XrAudioManager : MonoBehaviour
     {
         for (int i = 0; i < cabinetDoors.Length; i++)
         {
-
-            //dont think it needs fixing?
             if (arg0.interactableObject == cabinetDoors[i])
             {
                 cabinetDoorSound[i].Stop();

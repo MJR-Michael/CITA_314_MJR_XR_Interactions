@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.Events;
 using System;
-using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class ProgressControl : MonoBehaviour
 {
@@ -17,14 +16,14 @@ public class ProgressControl : MonoBehaviour
 
     [Header("Drawer Interactable")]
     [SerializeField] DrawerInteractable drawer;
-    XRSocketInteractor drawerSocket;
+    UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor drawerSocket;
 
     [Header("Combo Lock")]
     [SerializeField] CombinationLock comboLock;
 
     [Header("The Wall")]
     [SerializeField] TheWall wall;
-    XRSocketInteractor wallSocket;
+    UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor wallSocket;
     [SerializeField] GameObject teleportationAreas;
 
     [Header("Library")]
